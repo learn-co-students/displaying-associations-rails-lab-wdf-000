@@ -29,3 +29,5 @@ Then they build artist#show iterating over all the songs
 then they should build artist#index which will also show a song count using @artist.song_count which should implement self.songs.size
 
 we should comment on how we build into the model and not into the view. explain that this lab is demonstrating how to use model methods to simplify view logic. perhaps this should even be demonstrated in the corresponding readme of this lab.
+
+<a href='https://learn.co/lessons/displaying-associations-rails-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
