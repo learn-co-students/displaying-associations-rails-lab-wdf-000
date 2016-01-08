@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 require 'rails_helper'
 
+=======
+>>>>>>> Full solution.
 describe "songs", type:  :feature do
   before do
     Artist.destroy_all

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 require 'rails_helper'
 
+=======
+>>>>>>> Full solution.
 describe "artists", type:  :feature do
   before do
     Artist.destroy_all
@@ -29,6 +32,10 @@ describe "artists", type:  :feature do
 
   it "shows the song count for each artist" do
     visit artists_path
+<<<<<<< HEAD
     expect(page).to have_content("2 songs")
+=======
+    expect(page).to have_content("2 song")
+>>>>>>> Full solution.
   end
 end
