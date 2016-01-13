@@ -1,33 +1,49 @@
 # Displaying Associations Rails
 
-## Objectives
+In the previous unit, we used validations and forms to create a management
+dashboard for songs and artists. Now we're ready to start connecting those
+models and using their relationships to display more interesting data.
 
-Students will be able to:
+- In the controllers, this lab will require you to write `show` and `index`
+actions for both `Song` and `Artist`.
 
-1. Create a has_many and belongs to association.
-2. Build associated data through console (or perhaps seeds).
-3. Query for associated data using methods provided by association.
-4. Embed association data within views.
-5. Iterate over associated data within a view displaying individual instances.
+- You'll need to add a foreign key by writing your own migration.
 
-## Notes
+- You'll need to set up the association in the model classes.
 
-We'll give them Song/Artist crud controllers, but only #new, #edit, #update, #create, #destroy. They'll have to build the #show/#index
+- You'll need to format and link to the songs and artists according to the
+  specs.
 
-we'll give them models without the associations or the required migrations.
+Additionally, you'll find that the specs require two special methods,
+`Artist#song_count` and `Song#artist_name`. These methods are meant to protect
+the views from complexity that belongs in the model.
 
-they will have to write migrations to add a artist_id fk to song.
+They are also a great example of a software design principle called the [Law of
+Demeter][law_of_demeter], which is sometimes called the "one dot" rule in
+object-oriented languages like Ruby. In other words, this:
 
-then they will need to wire the assocation.
+```ruby
+user.best_friend
+```
 
-then they should build the song index and show, with the index view writing out the link to the song in artist.name - song.name format, forcing them to call the assocation @song.artist.name to generate the link text. we could make this a method song#artist_name that delegates, it'd be easier to test and would be able to prep them to account for nil artists within that method and will pair nicely with the artist_name= writer that will delegate to song.build_artist so nice symmetry there.
+Is better than this:
 
-after song#show with the artist link, which should be easier after the first challenge (so maybe we reverse the order actually, yes, do song#show first forcing them to build song#artist_name and then let's do song#index to spec above)
+```ruby
+user.friends.find_by(best: true)
+```
 
-Then they build artist#show iterating over all the songs
+Because all of the "friend"-related complexity is hidden away within the user
+model. This **protects** user-related code from future changes to friend
+functionality.
 
-then they should build artist#index which will also show a song count using @artist.song_count which should implement self.songs.size
+For example, if the above architecture changed such that best friendship was
+determined by the highest "friendship" value instead of a boolean `best` flag,
+the "two-dots" code would need to be changed *everywhere*, but the first
+snippet, which obeys the Law of Demeter, hides that complexity in the
+`User#best_friend` method, whose definition can be changed without having to
+track down and update every single usage.
 
-we should comment on how we build into the model and not into the view. explain that this lab is demonstrating how to use model methods to simplify view logic. perhaps this should even be demonstrated in the corresponding readme of this lab.
+[law_of_demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
 
-<a href='https://learn.co/lessons/displaying-associations-rails-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
+<a href='https://learn.co/lessons/displaying-associations-rails-lab'
+data-visibility='hidden'>View this lesson on Learn.co</a>
