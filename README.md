@@ -45,5 +45,6 @@ track down and update every single usage.
 
 [law_of_demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
 
-<a href='https://learn.co/lessons/displaying-associations-rails-lab'
-data-visibility='hidden'>View this lesson on Learn.co</a>
+<a href='https://learn.co/lessons/displaying-associations-rails-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/displaying-associations-rails-lab'>Displaying Associations Data Lab</a> on Learn.co and start learning to code for free.</p>
