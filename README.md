@@ -19,7 +19,7 @@ Additionally, you'll find that the specs require two special methods,
 the views from complexity that belongs in the model.
 
 They are also a great example of a software design principle called the [Law of
-Demeter][law_of_demeter], which is sometimes called the "one dot" rule in
+Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter), which is sometimes called the "one dot" rule in
 object-oriented languages like Ruby. In other words, this:
 
 ```ruby
@@ -42,9 +42,5 @@ the "two-dots" code would need to be changed *everywhere*, but the first
 snippet, which obeys the Law of Demeter, hides that complexity in the
 `User#best_friend` method, whose definition can be changed without having to
 track down and update every single usage.
-
-[law_of_demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
-
-<a href='https://learn.co/lessons/displaying-associations-rails-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/displaying-associations-rails-lab'>Displaying Associations Data Lab</a> on Learn.co and start learning to code for free.</p>
