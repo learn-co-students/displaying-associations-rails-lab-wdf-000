@@ -20,19 +20,15 @@ the views from complexity that belongs in the model.
 
 They are also a great example of a software design principle called the [Law of
 Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter), which is sometimes called the "one dot" rule in
-object-oriented languages like Ruby. In other words, this:
-
+object-oriented languages like Ruby. In other words,
 ```ruby
 user.best_friend
 ```
-
-Is better than this:
-
+is better than
 ```ruby
 user.friends.find_by(best: true)
 ```
-
-Because all of the "friend"-related complexity is hidden away within the user
+because all of the "friend"-related complexity is hidden away within the user
 model. This **protects** user-related code from future changes to friend
 functionality.
 
