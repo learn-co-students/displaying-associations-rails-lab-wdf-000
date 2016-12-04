@@ -1,0 +1,7 @@
+<h1>Songs currently available:</h1>
+
+<% @songs.each do |song| %>
+
+  <p><%= link_to "#{song.artist_name} - #{song.title}", song_path(song) %></p>
+
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Artists currently available:</h1>
+
+<% @artists.each do |artist| %>
+
+  <p><%= link_to artist.name, artist_path(artist) %>
+    currently has <%= artist.song_count %> songs in the database</p>
+
+<% end %>
