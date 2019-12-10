@@ -2,6 +2,12 @@
 
 .DS_Store
 
+#tmp
+tmp
+
+# DB
+db/*.sqlite3
+
 ### Node ###
 # Logs
 logs
